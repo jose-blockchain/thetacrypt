@@ -5,7 +5,7 @@
 #![allow(dead_code)]
 
 use asn1::{ParseError, WriteError};
-use chacha20poly1305::aead::{Aead, NewAead};
+use chacha20poly1305::aead::{Aead, KeyInit};
 use chacha20poly1305::{ChaCha20Poly1305, Key, Nonce};
 use log::error;
 use mcore::bls12381::big;

@@ -7,7 +7,7 @@ use crate::{
 };
 use asn1::{ParseError, WriteError};
 use chacha20poly1305::{
-    aead::{Aead, NewAead},
+    aead::{Aead, KeyInit},
     ChaCha20Poly1305, Key, Nonce,
 };
 use mcore::hash256::HASH256;
