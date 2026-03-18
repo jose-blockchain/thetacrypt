@@ -867,11 +867,8 @@ impl Serializable for FrostData {
 
 pub(crate) fn nonce_generate(secret: &SizedBigInt, rng: &mut RNG) -> SizedBigInt {
     let random_bytes = rng.random_bytes(32);
-    println!("rand bytes {}", hex::encode(&random_bytes));
     let secret_bytes = serialize_scalar(secret);
-
-    println!("secret bytes {}", hex::encode(&secret_bytes));
-    return h3(&[random_bytes, secret_bytes].concat(), &secret.get_group());
+    h3(&[random_bytes, secret_bytes].concat(), &secret.get_group())
 }
 
 pub(crate) fn compute_binding_factors(
